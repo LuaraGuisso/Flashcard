@@ -1,11 +1,9 @@
-alert("JavaScript funcionando!");
+const cards = document.querySelectorAll(".card");
 
-function mudarCor(card) {
+cards.forEach(function(card) {
 
-    if (card.classList.contains("clicado")) {
-        card.classList.remove("clicado");
-    } else {
-        card.classList.add("clicado");
-    }
+    card.addEventListener("click", function() {
+        card.classList.toggle("clicado");
+    });
 
-}
+});
