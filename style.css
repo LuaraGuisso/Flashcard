@@ -6,14 +6,14 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #9264b7;
+    background-color: #6a55de;
     text-align: center;
     padding: 30px;
 }
 
 h1 {
     margin-bottom: 30px;
-    color: #060505;
+    color: #f7f4f4;
 }
 
 .flashcards {
@@ -30,7 +30,7 @@ h1 {
 
     padding: 25px;
 
-    background-color: #f07d7d;
+    background-color: #f21414;
     border-radius: 20px;
 
     border: 2px solid #000000;
