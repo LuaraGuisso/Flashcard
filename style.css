@@ -49,8 +49,10 @@ h1 {
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-25px) scale(1.04);
+    box-shadow: 0 20px 35px rgba(75, 59, 90, 0.30);
 }
+
 
 .card h2 {
     font-size: 24px;
