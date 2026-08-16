@@ -6,37 +6,37 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8ac90;
+    background-color: #f3e8ff;
     text-align: center;
-    padding: 30px;
+    padding: 40px 20px;
 }
 
 h1 {
-    margin-bottom: 30px;
-    color: #f7f4f4;
+    color: #4b3b5a;
+    font-size: 36px;
+    margin-bottom: 45px;
 }
 
 .flashcards {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: stretch;
-    gap: 20px;
-
+    gap: 25px;
     flex-wrap: wrap;
 }
 
 .card {
-    width: 180px;
-    min-height: 300px;
+    width: 220px;
+    height: 500px;
 
-    padding: 25px;
+    padding: 30px 25px;
 
-    background-color: white;
-    color: #333;
+    background-color: #ffffff;
+    color: #4b3b5a;
 
-    border: 2px solid #ddd;
-    border-radius: 20px;
+    border: none;
+    border-radius: 25px;
+
+    box-shadow: 0 8px 20px rgba(75, 59, 90, 0.15);
 
     cursor: pointer;
 
@@ -48,46 +48,52 @@ h1 {
     transition: 0.3s;
 }
 
+.card:hover {
+    transform: translateY(-8px);
+}
+
 .card h2 {
-    margin-bottom: 15px;
+    font-size: 24px;
+    margin-bottom: 25px;
 }
 
 .card p {
     font-size: 17px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-.card:hover {
-    transform: scale(1.03);
-}
-
-/* COR DO CARD QUANDO CLICAR */
+/* COR QUANDO CLICAR */
 
 .card.clicado {
-    background-color: #030d7a;
+    background-color: #7b5ca7;
     color: white;
-    border-color: #7ac0f7;
+    box-shadow: 0 10px 25px rgba(75, 59, 90, 0.3);
 }
 
 /* CELULAR */
 
 @media (max-width: 600px) {
 
-    .flashcards {
-        gap: 15px;
+    body {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 30px;
     }
 
     .card {
-        width: 440px;
-        min-height: 250px;
-        padding: 15px;
+        width: 170px;
+        height: 350px;
+        padding: 20px;
     }
 
     .card h2 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .card p {
-        font-size: 14px;
+        font-size: 15px;
     }
 }
