@@ -1,3 +1,5 @@
+alert("JavaScript funcionando!");
+
 function mudarCor(card) {
 
     if (card.classList.contains("clicado")) {
