@@ -18,22 +18,25 @@ h1 {
 
 .flashcards {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
     gap: 20px;
+
+    flex-wrap: wrap;
 }
 
 .card {
-    width: 90%;
-    max-width: 500px;
-    min-height: 150px;
+    width: 180px;
+    min-height: 300px;
 
     padding: 25px;
 
-    background-color: #952a2a;
-    border-radius: 20px;
+    background-color: white;
+    color: #333;
 
-    border: 2px solid #f8f5f5;
+    border: 2px solid #ddd;
+    border-radius: 20px;
 
     cursor: pointer;
 
@@ -55,10 +58,36 @@ h1 {
 }
 
 .card:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
+
+/* COR DO CARD QUANDO CLICAR */
+
 .card.clicado {
-    background-color: #f1ebeb;
-    color: rgb(186, 31, 31);
-    border-color: #f1eded;
+    background-color: #030d7a;
+    color: white;
+    border-color: #7ac0f7;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .flashcards {
+        gap: 15px;
+    }
+
+    .card {
+        width: 140px;
+        min-height: 250px;
+        padding: 15px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
 }
