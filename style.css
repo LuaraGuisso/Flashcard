@@ -6,14 +6,14 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #9264b7;
     text-align: center;
     padding: 30px;
 }
 
 h1 {
     margin-bottom: 30px;
-    color: #333;
+    color: #060505;
 }
 
 .flashcards {
@@ -30,10 +30,10 @@ h1 {
 
     padding: 25px;
 
-    background-color: #ffffff;
+    background-color: #f07d7d;
     border-radius: 20px;
 
-    border: 2px solid #ddd;
+    border: 2px solid #000000;
 
     cursor: pointer;
 
@@ -58,7 +58,7 @@ h1 {
     transform: scale(1.02);
 }
 .card.clicado {
-    background-color: #030d7a;
+    background-color: #750404;
     color: white;
-    border-color: #7ac0f0;
+    border-color: #000000;
 }
