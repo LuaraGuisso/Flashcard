@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #6a55de;
+    background-color: #f8ac90;
     text-align: center;
     padding: 30px;
 }
@@ -30,7 +30,7 @@ h1 {
 
     padding: 25px;
 
-    background-color: #f21414;
+    background-color: #952a2a;
     border-radius: 20px;
 
     border: 2px solid #000000;
@@ -58,7 +58,7 @@ h1 {
     transform: scale(1.02);
 }
 .card.clicado {
-    background-color: #750404;
-    color: white;
-    border-color: #000000;
+    background-color: #f1ebeb;
+    color: rgb(186, 31, 31);
+    border-color: #f1eded;
 }
