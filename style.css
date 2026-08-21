@@ -20,42 +20,68 @@ h1 {
 .flashcards {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
 }
 
 .card {
-    width: 220px;
+    width: 19%;
     height: 500px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-interno {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.clicado .card-interno {
+    transform: rotateY(180deg);
+}
+
+.frente,
+.verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 
     padding: 30px 25px;
 
-    background-color: #ffffff;
-    color: #4b3b5a;
-
-    border: none;
     border-radius: 25px;
-
-    box-shadow: 0 8px 20px rgba(75, 59, 90, 0.15);
-
-    cursor: pointer;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    backface-visibility: hidden;
+
+    box-shadow: 0 8px 20px rgba(75, 59, 90, 0.15);
+
     transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-25px) scale(1.04);
+.frente {
+    background-color: #ffffff;
+    color: #4b3b5a;
+}
+
+.frente:hover {
+    transform: translateY(-20px) scale(1.03);
     background-color: #7b5ca7;
     color: white;
     box-shadow: 0 20px 35px rgba(75, 59, 90, 0.30);
-    
 }
 
+.verso {
+    background-color: #7b5ca7;
+    color: white;
+    transform: rotateY(180deg);
+}
 
 .card h2 {
     font-size: 24px;
@@ -67,15 +93,33 @@ h1 {
     line-height: 1.6;
 }
 
-/* COR QUANDO CLICAR */
+.imagem {
+    width: 85%;
+    height: 250px;
 
-.card.clicado {
-    background-color: #7b5ca7;
-    color: white;
-    box-shadow: 0 10px 25px rgba(75, 59, 90, 0.3);
+    border: 2px dashed white;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
 }
 
+
 /* CELULAR */
+
+@media (max-width: 900px) {
+
+    .flashcards {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 30%;
+    }
+}
 
 @media (max-width: 600px) {
 
@@ -88,10 +132,13 @@ h1 {
         margin-bottom: 30px;
     }
 
+    .flashcards {
+        gap: 20px;
+    }
+
     .card {
-        width: 170px;
-        height: 350px;
-        padding: 20px;
+        width: 45%;
+        height: 400px;
     }
 
     .card h2 {
@@ -100,5 +147,9 @@ h1 {
 
     .card p {
         font-size: 15px;
+    }
+
+    .imagem {
+        height: 200px;
     }
 }
