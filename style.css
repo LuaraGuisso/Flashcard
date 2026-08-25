@@ -38,19 +38,21 @@ body {
     box-shadow: 0 4px 10px rgba(75, 59, 90, 0.1);
 }
 
-/* Área dos cards */
+/* Área dos cards: Garante que fiquem UM AO LADO DO OUTRO */
 .flashcards {
     display: flex;
     justify-content: center;
     gap: 25px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Faz quebrar a linha se não couber na tela */
     perspective: 1000px; /* Ativa profundidade 3D */
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 /* Base do card externa (não se move) */
 .card {
-    width: 220px;
-    height: 500px;
+    width: 240px;
+    height: 420px;
     background-color: transparent;
     cursor: pointer;
     perspective: 1000px;
@@ -92,16 +94,16 @@ body {
 .card-frente {
     background-color: #ffffff;
     color: #4b3b5a;
-    padding: 30px 25px;
+    padding: 30px 21px;
 }
 
 .card-frente h2 {
-    font-size: 24px;
-    margin-bottom: 25px;
+    font-size: 22px;
+    margin-bottom: 20px;
 }
 
 .card-frente p {
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.6;
 }
 
@@ -140,19 +142,8 @@ body {
     }
 
     .card {
-        width: 170px;
-        height: 350px;
-    }
-
-    .card-frente {
-        padding: 20px;
-    }
-
-    .card-frente h2 {
-        font-size: 20px;
-    }
-
-    .card-frente p {
-        font-size: 15px;
+        width: 100%; /* No celular, ocupa a largura disponível */
+        max-width: 280px;
+        height: 380px;
     }
 }
