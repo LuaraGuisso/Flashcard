@@ -1,106 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcards</title>
+    <title>Flashcards Dinâmicos</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <h1>Meus Flashcards</h1>
 
-    <main class="flashcards">
-
-        <!-- FLASHCARD 1 -->
-        <div class="card">
-            <div class="card-interno">
+    <div class="container">
+        <!-- O Card único que recebe os dados do banco -->
+        <div class="card" id="flashcard">
+            <div class="card-interno" id="card-interno">
                 <div class="frente">
-                    <h2>Lentes</h2>
-                    <p>
-                        As lentes alteram a direção da luz por refração para ajustar imagens.
-                        As convergentes aproximam os raios para ampliar a visão, enquanto as
-                        divergentes os afastam. São a base de óculos, câmeras e microscópios.
-                    </p>
+                    <h2 id="titulo-frente">Carregando...</h2>
+                    <p id="texto-frente">Buscando informações no banco de dados...</p>
                 </div>
                 <div class="verso">
                     <div class="imagem">
-                        <img src="imagem1.jpg" alt="Imagem sobre lentes">
+                        <img id="img-verso" src="" alt="Imagem explicativa">
                     </div>
-                    <h2>Lentes</h2>
+                    <h2 id="titulo-verso">Carregando...</h2>
                 </div>
             </div>
         </div>
 
-        <!-- FLASHCARD 2 -->
-        <div class="card">
-            <div class="card-interno">
-                <div class="frente">
-                    <h2>Flashcard 2</h2>
-                    <p>Escreva aqui a explicação do segundo conteúdo.</p>
-                </div>
-                <div class="verso">
-                    <div class="imagem">
-                        <img src="imagem2.jpg" alt="Imagem do segundo conteúdo">
-                    </div>
-                    <h2>Flashcard 2</h2>
-                </div>
-            </div>
+        <!-- Botões de controle de fluxo -->
+        <div class="controles">
+            <button id="btn-voltar" class="btn">Voltar</button>
+            <span id="indicador-pagina">1 / --</span>
+            <button id="btn-avancar" class="btn">Avançar</button>
         </div>
-
-        <!-- FLASHCARD 3 -->
-        <div class="card">
-            <div class="card-interno">
-                <div class="frente">
-                    <h2>Flashcard 3</h2>
-                    <p>Escreva aqui a explicação do terceiro conteúdo.</p>
-                </div>
-                <div class="verso">
-                    <div class="imagem">
-                        <img src="imagem3.jpg" alt="Imagem do terceiro conteúdo">
-                    </div>
-                    <h2>Flashcard 3</h2>
-                </div>
-            </div>
-        </div>
-
-        <!-- FLASHCARD 4 -->
-        <div class="card">
-            <div class="card-interno">
-                <div class="frente">
-                    <h2>Flashcard 4</h2>
-                    <p>Escreva aqui a explicação do quarto conteúdo.</p>
-                </div>
-                <div class="verso">
-                    <div class="imagem">
-                        <img src="imagem4.jpg" alt="Imagem do quarto conteúdo">
-                    </div>
-                    <h2>Flashcard 4</h2>
-                </div>
-            </div>
-        </div>
-
-        <!-- FLASHCARD 5 -->
-        <div class="card">
-            <div class="card-interno">
-                <div class="frente">
-                    <h2>Flashcard 5</h2>
-                    <p>Escreva aqui a explicação do quinto conteúdo.</p>
-                </div>
-                <div class="verso">
-                    <div class="imagem">
-                        <img src="imagem5.jpg" alt="Imagem do quinto conteúdo">
-                    </div>
-                    <h2>Flashcard 5</h2>
-                </div>
-            </div>
-        </div>
-
-    </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
-
 </html>
