@@ -7,171 +7,152 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f3e8ff;
-    text-align: center;
     padding: 40px 20px;
 }
 
-h1 {
+/* Estrutura do Cabeçalho */
+.cabecalho {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 45px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabecalho h1 {
     color: #4b3b5a;
     font-size: 36px;
-    margin-bottom: 45px;
+    margin: 0;
 }
 
-.container {
+.cabecalho .nome-autor {
+    position: absolute;
+    right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #7b5ca7;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(75, 59, 90, 0.1);
+}
+
+/* Área dos cards */
+.flashcards {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    width: 100%;
-    max-width: 420px; /* Mantém o card estruturado no meio */
-    margin: 0 auto;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    perspective: 1000px; /* Ativa profundidade 3D */
 }
 
+/* Base do card externa (não se move) */
 .card {
-    width: 100%;
+    width: 220px;
     height: 500px;
-    perspective: 1000px;
+    background-color: transparent;
     cursor: pointer;
+    perspective: 1000px;
 }
 
+/* Elemento interno que executa o giro de 180 graus */
 .card-interno {
+    position: relative;
     width: 100%;
     height: 100%;
-    position: relative;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    transition: transform 0.6s ease-in-out;
     transform-style: preserve-3d;
+    box-shadow: 0 8px 20px rgba(75, 59, 90, 0.15);
+    border-radius: 25px;
 }
 
-/* Ativado via JS para girar o componente */
-.card-interno.girado {
+/* Efeito ao passar o mouse ou clicar */
+.card:hover .card-interno,
+.card.clicado .card-interno {
     transform: rotateY(180deg);
 }
 
-.frente,
-.verso {
+/* Configuração compartilhada pelas duas faces do card */
+.card-frente, .card-tras {
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 30px 25px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    box-shadow: 0 8px 20px rgba(75, 59, 90, 0.15);
 }
 
-.frente {
+/* Estilo da Frente (Seu design original limpo) */
+.card-frente {
     background-color: #ffffff;
     color: #4b3b5a;
-    transition: background-color 0.3s, color 0.3s;
+    padding: 30px 25px;
 }
 
-/* Hover na frente funciona apenas se o card não estiver girado */
-.card:hover .card-interno:not(.girado) .frente {
-    background-color: #7b5ca7;
-    color: white;
-}
-
-.verso {
-    background-color: #c9b2e8;
-    color: #4b3b5a;
-    transform: rotateY(180deg);
-    justify-content: flex-start;
-    padding-top: 35px;
-    overflow: hidden;
-}
-
-.card h2 {
+.card-frente h2 {
     font-size: 24px;
     margin-bottom: 25px;
 }
 
-.card p {
+.card-frente p {
     font-size: 17px;
     line-height: 1.6;
 }
 
-/* CONTAINER DA IMAGEM */
-.imagem {
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    background-color: #a98bcf;
+/* Estilo da parte traseira onde fica a imagem */
+.card-tras {
+    background-color: #7b5ca7;
+    color: white;
+    transform: rotateY(180deg); /* Mantém invertido para desvirar no hover */
+    overflow: hidden; /* Corta a imagem nas bordas arredondadas */
 }
 
-.imagem img {
+.card-tras img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    object-fit: cover; /* Ajusta a imagem sem esticá-la ou distorcê-la */
 }
 
-/* ÁREA DOS BOTÕES */
-.controles {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.btn {
-    background-color: #4b3b5a;
-    color: white;
-    border: none;
-    padding: 12px 28px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-}
-
-.btn:hover {
-    background-color: #7b5ca7;
-}
-
-.btn:active {
-    transform: scale(0.95);
-}
-
-.btn:disabled {
-    background-color: #d1c4e9;
-    color: #9575cd;
-    cursor: not-allowed;
-}
-
-#indicador-pagina {
-    font-size: 18px;
-    font-weight: bold;
-    color: #4b3b5a;
-}
-
-/* RESPONSIVIDADE PARA CELULARES */
+/* Ajustes responsivos para Celular */
 @media (max-width: 600px) {
     body {
         padding: 30px 15px;
     }
 
-    h1 {
-        font-size: 28px;
+    .cabecalho {
+        flex-direction: column;
+        gap: 10px;
         margin-bottom: 30px;
     }
 
-    .card {
-        height: 430px;
+    .cabecalho .nome-autor {
+        position: static;
     }
 
-    .card h2 {
+    .cabecalho h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        width: 170px;
+        height: 350px;
+    }
+
+    .card-frente {
+        padding: 20px;
+    }
+
+    .card-frente h2 {
         font-size: 20px;
     }
 
-    .card p {
+    .card-frente p {
         font-size: 15px;
     }
 }

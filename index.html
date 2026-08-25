@@ -1,38 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcards Dinâmicos</title>
+    <title>Flashcards</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>Meus Flashcards</h1>
+    <!-- Cabeçalho com o título e seu nome no canto direito -->
+    <header class="cabecalho">
+        <h1>FLASHCARDS</h1>
+        <span class="nome-autor">Luara Guisso</span>
+    </header>
 
-    <div class="container">
-        <!-- Estrutura correta com os IDs que o JavaScript precisa -->
-        <div class="card" id="flashcard">
-            <div class="card-interno" id="card-interno">
-                <div class="frente">
-                    <h2 id="titulo-frente">Carregando Categoria...</h2>
-                    <p id="texto-frente">Buscando pergunta no banco de dados...</p>
+    <div class="flashcards">
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <div class="card-interno">
+                <div class="card-frente">
+                    <h2>Lentes</h2>
+                    <p>As lentes alteram a direção da luz por refração para ajustar imagens.
+                         As convergentes aproximam os raios para ampliar a visão, enquanto as divergentes os afastam.
+                          São a base de óculos, câmeras e microscópios.</p>
                 </div>
-                <div class="verso">
-                    <h2 id="titulo-verso">Carregando Categoria...</h2>
-                    <p id="texto-verso">Buscando resposta...</p>
+                <div class="card-tras">
+                    <!-- Substitua pelo nome do seu arquivo de imagem -->
+                    <img src="imagem1.jpg" alt="Imagem Lentes">
                 </div>
             </div>
         </div>
 
-        <!-- Botões de controle de fluxo -->
-        <div class="controles">
-            <button id="btn-voltar" class="btn">Voltar</button>
-            <span id="indicador-pagina">1 / --</span>
-            <button id="btn-avancar" class="btn">Avançar</button>
+        <!-- CARD 2 -->
+        <div class="card">
+            <div class="card-interno">
+                <div class="card-frente">
+                    <h2>Flashcard 2</h2>
+                    <p>Escreva aqui a explicação do segundo conteúdo.</p>
+                </div>
+                <div class="card-tras">
+                    <img src="imagem2.jpg" alt="Imagem 2">
+                </div>
+            </div>
         </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <div class="card-interno">
+                <div class="card-frente">
+                    <h2>Flashcard 3</h2>
+                    <p>Escreva aqui a explicação do terceiro conteúdo.</p>
+                </div>
+                <div class="card-tras">
+                    <img src="imagem3.jpg" alt="Imagem 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+            <div class="card-interno">
+                <div class="card-frente">
+                    <h2>Flashcard 4</h2>
+                    <p>Escreva aqui a explicação do quarto conteúdo.</p>
+                </div>
+                <div class="card-tras">
+                    <img src="imagem4.jpg" alt="Imagem 4">
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="card">
+            <div class="card-interno">
+                <div class="card-frente">
+                    <h2>Flashcard 5</h2>
+                    <p>Escreva aqui a explicação do quinto conteúdo.</p>
+                </div>
+                <div class="card-tras">
+                    <img src="imagem5.jpg" alt="Imagem 5">
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
+
 </html>
