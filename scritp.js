@@ -1,4 +1,4 @@
-const dbName = "FlashcardsDB";
+const dbName = "FlashcardsDB_Novo";
 const storeName = "perguntas";
 
 const dadosIniciais = [
