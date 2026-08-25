@@ -1,14 +1,149 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Arial, sans-serif; background-color: #f3e8ff; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
-.cabecalho { position: relative; width: 100%; max-width: 1200px; text-align: center; margin-bottom: 45px; }
-.nome-autor { position: absolute; right: 10px; top: 0; font-weight: bold; color: #7b5ca7; background: white; padding: 8px 15px; border-radius: 15px; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Flexbox para alinhar cards na horizontal */
-.flashcards { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; perspective: 1000px; }
-.card { width: 240px; height: 450px; cursor: pointer; perspective: 1000px; }
-.card-interno { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
-.card:hover .card-interno { transform: rotateY(180deg); }
-.card-frente, .card-tras { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 25px; display: flex; flex-direction: column; justify-content: center; padding: 20px; }
-.card-frente { background-color: white; color: #4b3b5a; }
-.card-tras { background-color: #7b5ca7; color: white; transform: rotateY(180deg); }
-@media (max-width: 600px) { .flashcards { flex-direction: column; align-items: center; } }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3e8ff;
+    padding: 40px 20px;
+}
+
+/* Estrutura do Cabeçalho */
+.cabecalho {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 45px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabecalho h1 {
+    color: #4b3b5a;
+    font-size: 36px;
+    margin: 0;
+}
+
+.cabecalho .nome-autor {
+    position: absolute;
+    right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #7b5ca7;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(75, 59, 90, 0.1);
+}
+
+/* Área dos cards: Garante que fiquem UM AO LADO DO OUTRO */
+.flashcards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap; /* Faz quebrar a linha se não couber na tela */
+    perspective: 1000px; /* Ativa profundidade 3D */
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Base do card externa (não se move) */
+.card {
+    width: 240px;
+    height: 420px;
+    background-color: transparent;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+/* Elemento interno que executa o giro de 180 graus */
+.card-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: 0 8px 20px rgba(75, 59, 90, 0.15);
+    border-radius: 25px;
+}
+
+/* Efeito ao passar o mouse ou clicar */
+.card:hover .card-interno,
+.card.clicado .card-interno {
+    transform: rotateY(180deg);
+}
+
+/* Configuração compartilhada pelas duas faces do card */
+.card-frente, .card-tras {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo da Frente (Seu design original limpo) */
+.card-frente {
+    background-color: #ffffff;
+    color: #4b3b5a;
+    padding: 30px 21px;
+}
+
+.card-frente h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.card-frente p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Estilo da parte traseira onde fica a imagem */
+.card-tras {
+    background-color: #7b5ca7;
+    color: white;
+    transform: rotateY(180deg); /* Mantém invertido para desvirar no hover */
+    overflow: hidden; /* Corta a imagem nas bordas arredondadas */
+}
+
+.card-tras img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem sem esticá-la ou distorcê-la */
+}
+
+/* Ajustes responsivos para Celular */
+@media (max-width: 600px) {
+    body {
+        padding: 30px 15px;
+    }
+
+    .cabecalho {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .cabecalho .nome-autor {
+        position: static;
+    }
+
+    .cabecalho h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        width: 100%; /* No celular, ocupa a largura disponível */
+        max-width: 280px;
+        height: 380px;
+    }
+}
