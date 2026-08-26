@@ -147,3 +147,21 @@ body {
         height: 380px;
     }
 }
+.rodape {
+    background-color: #2e0854; /* Roxo escuro */
+    padding: 15px 0; /* Altura pequena do rodapé */
+    margin-top: 50px; /* Espaço entre os cards e o rodapé */
+    border-radius: 15px; /* Bordas arredondadas seguindo o padrão do seu tema */
+    width: 100%;
+    max-width: 1200px; /* Alinhado com a largura máxima do seu cabeçalho */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ajuste de espaço para o celular */
+@media (max-width: 600px) {
+    .rodape {
+        margin-top: 35px;
+        padding: 10px 0;
+    }
+}
