@@ -12,10 +12,8 @@ body {
 body {
     margin-bottom: 50px;       
     background-color: #551f5c; 
-   
+}
 
-
-/* Estrutura do Cabeçalho */
 .cabecalho {
     position: relative;
     max-width: 1200px;
