@@ -9,6 +9,11 @@ body {
     background-color: #f3e8ff;
     padding: 40px 20px;
 }
+body {
+    margin-bottom: 50px;       
+    background-color: #551f5c; 
+   
+
 
 /* Estrutura do Cabeçalho */
 .cabecalho {
