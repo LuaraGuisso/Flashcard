@@ -121,6 +121,19 @@ body {
     object-fit: cover; /* Ajusta a imagem sem esticá-la ou distorcê-la */
 }
 
+/* Estilo específico para a parte traseira com vídeo nos novos cards */
+.card-tras-video {
+    justify-content: center;
+    padding: 10px;
+}
+
+.card-tras-video iframe {
+    width: 100%;
+    height: 70%;
+    border: none;
+    border-radius: 15px;
+}
+
 /* Ajustes responsivos para Celular */
 @media (max-width: 600px) {
     body {
